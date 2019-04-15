@@ -1,3 +1,4 @@
+/****************************************************************************
 MIT License
 
 Copyright (c) 2019 TOK
@@ -19,3 +20,40 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+****************************************************************************/
+#ifndef __MEMBER_MODEL_H
+#define __MEMBER_MODEL_H
+
+#include "DBConn.h"
+#include "Logger.h"
+
+// class forward declare
+class Member;
+
+class MemberModel {
+public:
+    MemberModel();
+
+    int add_friend(const std::string& tok_id,
+			const std::string& pk,
+            std::string nick_name,
+            std::string bio,
+            uint64_t create_time,
+            uint64_t update_time
+            );
+
+	Member* find_friend(std::string& pk);
+
+	int del_friend(const std::string& pk);
+
+	int update_friend_signature(const std::string& pk, const std::string& signature , uint64_t update_time);
+
+	int update_friend_bio(const std::string& pk, const std::string& bio, uint64_t update_time);
+
+	int update_friend_name(const std::string& pk, const std::string& name, uint64_t update_time);
+
+    virtual ~MemberModel();
+};
+
+extern MemberModel member_model;
+#endif //__MEMBER_MODEL_H

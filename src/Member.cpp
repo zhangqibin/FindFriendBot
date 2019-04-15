@@ -1,3 +1,4 @@
+/****************************************************************************
 MIT License
 
 Copyright (c) 2019 TOK
@@ -19,3 +20,27 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+****************************************************************************/
+#include "Member.h"
+
+Member::Member(string pk, string tok_id, string nick_name, string bio, string signature) :
+	pk_(pk), tok_id_(tok_id), nick_name_(nick_name), bio_(bio), signature_(signature), recommand_times_(0) {
+		
+}
+
+Member::Member() {
+	recommand_times_ = 0;
+}
+
+Member::~Member() {
+
+}
+
+void Member::clear() {
+	set_pk("");
+	set_tok_id("");
+	set_nick_name("");
+	set_bio("");
+	set_signature("");
+	set_recommand_times(0);
+}
