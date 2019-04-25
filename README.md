@@ -17,7 +17,7 @@
     
 #### How to build?
     Support mac and linux, We work on centos7 (3.10.0-327.el7.x86_64) and mac (mojave 10.14.4) well.
-    The project depend on thrid library, such as toxcore, boost, tcmalloc, mysql-connector-c++;
+    The project depend on third library, such as toxcore, boost, tcmalloc, mysql-connector-c++;
 
 ###### install libsodium
 ```
